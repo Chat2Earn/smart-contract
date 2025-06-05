@@ -113,6 +113,14 @@ pub struct TransferSol<'info> {
     pub system_program: Program<'info, System>,
 }
 
+#[account]
+pub struct UserStats {
+    pub user: Pubkey,
+    pub message_count: u64,
+    pub reward_balance: u64,
+    pub bump: u8,
+}
+
 #[error_code]
 pub enum ErrorCode {
     #[msg("No rewards available to claim.")]
